@@ -6,5 +6,6 @@ function createLoader() {
     $(".container").append(ring);
     $(".container").append(ring);
     $(".container").append(ring);
+    $(".container").append(p);
 }
 createLoader()

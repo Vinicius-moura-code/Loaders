@@ -14,9 +14,13 @@ const rain = () => {
     drop.style.left = posX + 'px';
     drop.style.animationDelay = delay + 's';
     drop.style.animationDuration = 1 + duration + 's';
-
-
     $('body').append(drop);
+
+    $("i").hover(()=> {
+      drop.style.animationDuration = 1 + duration + 's'
+    })
+
+    
     i++;
   }
 };

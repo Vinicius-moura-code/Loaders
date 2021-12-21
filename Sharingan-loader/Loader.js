@@ -6,6 +6,7 @@ function createLoader() {
   var tomoes = '<div class="tomoes"></div>';
   var tomoe = '<div class="tomoe"></div>';
   let sharingan = '<div class="sharingan"></div>';
+  let p = '<p><em>Loading</em></p>'
   $("body").append(ContainerLoader);
   $(".ContainerLoader").append(sharingan);
   $(".sharingan").append(pupil);
@@ -15,6 +16,8 @@ function createLoader() {
   $(".tomoes").append(tomoesarea);
   $(".tomoes").append(tomoesarea);
   $(".tomoe-area").append(tomoe);
+  $(".ContainerLoader").append(p);
+  $("p").append('<div class="dot-shuttle"></div>');
 }
 
 createLoader();

@@ -1,30 +1,35 @@
 :root {
-  --tomoe-size: calc(300px / 6.5);
+  --tomoe-size: calc(100px / 6.5);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-.ContainerLoader {
+body {
   display: flex;
-  width: 100%;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  background: rgba(34, 34, 34, 0.507);
-  border-radius: 40px;
+  min-height: 100vh;
+  background: #111;
+}
+
+.ContainerLoader {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
 }
 .sharingan {
-  width: 300px;
-  height: 300px;
-  border: calc(300px / 30) solid #000;
+  width: 120px;
+  height: 120px;
+  border: calc(100px / 30) solid #000;
   border-radius: 50%;
   background: hsl(0, 100%, 36%);
-  box-shadow: 0 0 100px 10px #000 inset;
+  box-shadow: 0 0 30px 4px #000 inset;
   position: relative;
 }
 
@@ -32,22 +37,22 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 60px;
-  height: 60px;
+  width: 20px;
+  height: 20px;
   background: #000;
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 100px 10px #000;
+  box-shadow: 0 0 2px 3px #000;
 }
 
 .iris {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   transform: translate(-50%, -50%);
-  border: 1px solid #000;
+  border: 3px solid rgba(0, 0, 0, 0.596);
   border-radius: 50%;
 }
 
@@ -58,8 +63,8 @@
 }
 .tomoe-area {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   top: 50%;
   left: 50%;
   border-radius: 50%;
@@ -68,8 +73,8 @@
 }
 
 .tomoe {
-  width: calc(300px / 6.5);
-  height: calc(300px / 6.5);
+  width: calc(100px / 6.5);
+  height: calc(100px / 6.5);
   position: absolute;
   background: #000;
   border-radius: 50%;
@@ -107,4 +112,65 @@
 }
 .tomoe-area:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+.ContainerLoader p {
+
+  position: absolute;
+  color: #fff;
+  font-size: 1.5em;
+  font-family: consolas;
+  bottom: -80px;
+  letter-spacing: 0.15em;
+}
+
+
+
+/*.dot-shuttle */
+.dot-shuttle {
+  position: relative;
+  left: 35px;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: transparent;
+  margin: 10px 0;
+  filter: blur(2px);
+}
+
+.dot-shuttle::before, .dot-shuttle::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background-color: #fff;
+  color: transparent;
+  filter: blur(2px);
+}
+
+.dot-shuttle::before {
+  left: 15px;
+  animation: dotShuttle 2s infinite ease-out;
+}
+
+.dot-shuttle::after {
+  left: 30px;
+}
+
+@keyframes dotShuttle {
+  0%,
+  50%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-45px);
+  }
+  75% {
+    transform: translateX(45px);
+  }
 }
